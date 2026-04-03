@@ -1,0 +1,95 @@
+/* Footer — ainternals.com per STYLE-GUIDE §13 */
+
+.footer {
+  background: var(--charcoal);
+  border-top: 1px solid var(--rule);
+  padding-top: 4rem;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+.brand { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.logo {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: var(--font-playfair, 'Nunito', sans-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 0.25rem;
+}
+.logoAi        { color: var(--white); }
+.logoInternals { color: var(--red); }
+
+.tagline {
+  font-family: var(--font-dm-sans, 'Inter', sans-serif);
+  font-size: 0.82rem;
+  color: var(--light);
+  font-weight: 500;
+}
+
+.sub {
+  font-family: var(--font-dm-sans, 'Inter', sans-serif);
+  font-size: 0.82rem;
+  color: var(--mid);
+  line-height: 1.55;
+}
+
+.sfLink {
+  font-family: var(--font-dm-mono, 'JetBrains Mono', monospace);
+  font-size: 0.75rem;
+  color: var(--red);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 0.25rem;
+  transition: color 0.2s;
+}
+.sfLink:hover { color: var(--red-light); }
+
+.col { display: flex; flex-direction: column; gap: 0.625rem; }
+
+.colHead {
+  font-family: var(--font-dm-mono, 'JetBrains Mono', monospace);
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--red);
+  margin-bottom: 0.25rem;
+}
+
+.colLink {
+  font-family: var(--font-dm-sans, 'Inter', sans-serif);
+  font-size: 0.82rem;
+  color: var(--mid);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.colLink:hover { color: var(--light); }
+
+.bottom {
+  border-top: 1px solid var(--rule);
+  padding: 1.25rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copyright {
+  font-family: var(--font-dm-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  color: var(--mid);
+}
+
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .inner { grid-template-columns: 1fr; gap: 2rem; }
+}

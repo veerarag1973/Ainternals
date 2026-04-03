@@ -1,0 +1,315 @@
+/* SpanForge page — ainternals.com per STYLE-GUIDE §10/11 */
+
+/* Hero — inner page */
+.hero {
+  padding: 56px 0 80px;
+  background: var(--dark);
+  background-image:
+    radial-gradient(ellipse 700px 400px at 75% 40%, rgba(26, 111, 219, 0.06) 0%, transparent 70%);
+  padding-top: calc(64px + 56px);
+}
+
+.h1 {
+  font-family: var(--font-playfair, 'Nunito', sans-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  max-width: 700px;
+  margin: 0.75rem 0;
+}
+
+.accent { color: var(--red); }
+
+.sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 600px;
+  margin-top: 0.5rem;
+}
+
+/* Generic sections */
+.section {
+  padding: 80px 0;
+  background: var(--dark);
+  border-top: 1px solid var(--rule);
+}
+.sectionAlt { background: var(--charcoal); }
+
+.h2 {
+  font-family: var(--font-playfair, 'Nunito', sans-serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+  margin: 0.75rem 0;
+}
+
+.sectionSub {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 580px;
+  line-height: 1.65;
+  margin-top: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Two-col product cards */
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.productCard {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.productCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--rule);
+}
+.productCardAccent::before { background: var(--red); }
+
+.productUrl {
+  display: block;
+  font-family: var(--font-dm-mono, 'JetBrains Mono', monospace);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--red);
+  margin-bottom: 0.625rem;
+}
+
+.productName {
+  font-family: var(--font-playfair, 'Nunito', sans-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.productDesc {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* Phase grid */
+.phaseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.phaseCard {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--phase-color, var(--rule));
+  border-radius: 6px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.phaseCard:hover { background: var(--surface-2); box-shadow: 0 2px 12px rgba(26,47,74,0.08); }
+
+.phaseTop {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.phaseNum {
+  font-family: var(--font-playfair, 'Nunito', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.phaseLabel {
+  font-family: var(--font-dm-mono, 'JetBrains Mono', monospace);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--light);
+  text-transform: uppercase;
+}
+
+.phaseDesc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.phaseNeeds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.phaseNeedTag {
+  font-family: var(--font-dm-mono, 'JetBrains Mono', monospace);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  background: var(--red-dim);
+  color: var(--red);
+}
+
+.phaseCount {
+  font-family: var(--font-dm-mono, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  color: var(--mid);
+  letter-spacing: 0.08em;
+}
+
+/* Phase mapping table */
+.tableWrap {
+  margin-top: 2rem;
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.table th {
+  text-align: left;
+  padding: 0.875rem 1.25rem;
+  font-family: var(--font-dm-mono, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--mid);
+  background: var(--charcoal);
+  border-bottom: 1px solid var(--rule);
+}
+.table td {
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.table tr:last-child td { border-bottom: none; }
+.table tbody tr { background: var(--dark); }
+.table tbody tr:nth-child(even) { background: var(--charcoal); }
+
+.tdPhase {
+  font-family: var(--font-dm-mono, 'JetBrains Mono', monospace);
+  font-size: 0.8rem;
+  color: var(--white);
+  white-space: nowrap;
+}
+.tdNeeds { color: var(--muted); font-size: 0.82rem; }
+.tdCount {
+  font-family: var(--font-dm-mono, 'JetBrains Mono', monospace);
+  font-size: 0.8rem;
+  color: var(--red);
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* T.R.U.S.T. grid */
+.trustGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.trustCard {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: background 0.2s, border-color 0.2s;
+}
+.trustCard:hover { background: var(--surface-2); border-color: var(--mid); }
+
+.trustBadge {
+  width: 36px;
+  height: 36px;
+  background: var(--red);
+  color: #FFFFFF;
+  font-family: var(--font-dm-mono, 'JetBrains Mono', monospace);
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.trustWord {
+  font-family: var(--font-dm-sans, 'Inter', sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.trustNeeds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.trustNeedTag {
+  font-family: var(--font-dm-mono, 'JetBrains Mono', monospace);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  background: var(--red-dim);
+  color: var(--red);
+}
+
+/* CTA section */
+.cta {
+  padding: 80px 0;
+  background: var(--charcoal);
+  border-top: 1px solid var(--rule);
+  text-align: center;
+}
+
+.ctaH2 {
+  font-family: var(--font-playfair, 'Nunito', sans-serif);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 2rem;
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 700px) {
+  .twoCol { grid-template-columns: 1fr; }
+}
